@@ -26,35 +26,6 @@ void CamadaDeAplicacaoTransmissora(std::string mensagem) {
     //...
 }
 
-void CamadaDeAplicacaoReceptora(int quadro[]) {
-    // std::string mensagem = quadro[]; // Estava trabalhando com bits
-    // Chama proxima camada
-    AplicacaoReceptora(mensagem);
-}
-
-void AplicacaoReceptora(std::string mensagem) {
-    std::cout << "A mensagem recebida foi: " << mensagem << std::endl;
-}
-
-void MeioDeComunicacao(int fluxoBrutoDeBits[]) {
-    // OBS: trabalhar com BITS e nao com BYTES!
-    int erro, porcentagemDeErros;
-    int fluxoBrutoDeBitsPontoA[], fluxoBrutoDeBitsPontoB[];
-
-    porcentagemDeErros = 0;  // 10%, 20%, 30%, ..., 100%
-    fluxoBrutoDeBitsPontoA = fluxoBrutoDeBits;
-
-    while (fluxoBrutoDeBitsPontoB.lenght != fluxoBrutoDeBitsPontoA) {
-        if ((rand() % 100 == ...)) {  // Fazer a probabilidade do erro
-            fluxoBrutoDeBitsPontoB += fluxoBrutoDeBitsPontoA;  // BITS!
-        } else {  // ERRO! INVERTER (usa condicao ternaria)
-            (fluxoBrutoDeBitsPontoB == 0)
-                ? fluxoBrutoDeBitsPontoA = fluxoBrutoDeBitsPontoB++
-                : fluxoBrutoDeBitsPontoA = fluxoBrutoDeBitsPontoB--;
-        }
-    }
-}
-
 void CamadaEnlaceDadosTransmissora(int quadro[]) {
     CamadaEnlaceDadosTransmissoraControleDeErro(quadro);
     // Chama proxima camada
@@ -87,3 +58,56 @@ void CamadaEnlaceDadosTransmissoraControleDeErroCRC(int quadro[]) {
     // implementar algoritmo
     // Usar polinomio CRC-32 (IEEE 802)
 }
+
+void MeioDeComunicacao(int fluxoBrutoDeBits[]) {
+    // OBS: trabalhar com BITS e nao com BYTES!
+    int erro, porcentagemDeErros;
+    int fluxoBrutoDeBitsPontoA[], fluxoBrutoDeBitsPontoB[];
+
+    porcentagemDeErros = 0;  // 10%, 20%, 30%, ..., 100%
+    fluxoBrutoDeBitsPontoA = fluxoBrutoDeBits;
+
+    while (fluxoBrutoDeBitsPontoB.lenght != fluxoBrutoDeBitsPontoA) {
+        if ((rand() % 100 == ...)) {  // Fazer a probabilidade do erro
+            fluxoBrutoDeBitsPontoB += fluxoBrutoDeBitsPontoA;  // BITS!
+        } else {  // ERRO! INVERTER (usa condicao ternaria)
+            (fluxoBrutoDeBitsPontoB == 0)
+                ? fluxoBrutoDeBitsPontoA = fluxoBrutoDeBitsPontoB++
+                : fluxoBrutoDeBitsPontoA = fluxoBrutoDeBitsPontoB--;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Receptor*/
+void CamadaDeAplicacaoReceptora(int quadro[]) {
+    // std::string mensagem = quadro[]; // Estava trabalhando com bits
+    // Chama proxima camada
+    AplicacaoReceptora(mensagem);
+}
+
+void AplicacaoReceptora(std::string mensagem) {
+    std::cout << "A mensagem recebida foi: " << mensagem << std::endl;
+}
+
+
