@@ -110,6 +110,9 @@ std::vector<bool> CamadaEnlaceDadosReceptoraControleDeErroCRC(std::vector<bool> 
     // O primeiro bit do resto final nao nos interessa
     resto.erase(resto.begin());
 
+    std::cout << "Resto: " << std::endl;
+    print_bits(resto);
+
     // Se o resto tiver todos os bits iguais a zero, entao nao houve erros na transmissao
     *Erro = false;
     for(size_t i = 0; i<resto.size(); i++) {
@@ -128,8 +131,6 @@ std::vector<bool> CamadaEnlaceDadosReceptoraControleDeErroCRC(std::vector<bool> 
 
 void CamadaDeAplicacaoReceptora(std::vector<bool> quadro, bool Erro) {
     // Convertendo bits para char
-    print_bits(quadro);
-
     std::string mensagem = bits_to_string(quadro);
     // Chama proxima camada
     AplicacaoReceptora(mensagem, Erro);

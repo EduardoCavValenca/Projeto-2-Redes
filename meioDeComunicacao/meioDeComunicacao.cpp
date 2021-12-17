@@ -3,7 +3,7 @@
 std::vector<bool> MeioDeComunicacao(std::vector<bool> fluxoBrutoDeBits) {
     // OBS: trabalhar com BITS e nao com BYTES!
     std::vector<bool> fluxoBrutoDeBitsFinal;
-    float porcentagemErro = 10;
+    float porcentagemErro = 0;
     size_t i = 0;
 
     while(fluxoBrutoDeBitsFinal.size() != fluxoBrutoDeBits.size()) {
